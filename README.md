@@ -5,3 +5,5 @@
 - [2] [*rotateImage*](https://github.com/kherin/DailyCodingProblems/blob/master/rotateImage.js) - You are given an n x n 2D matrix that represents an image. Rotate the image by 90 degrees (clockwise).
 
 - [3] [*PalindromeNumber*](https://github.com/kherin/DailyCodingProblems/blob/master/palindromeNumber.js) - Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+
+- [4] [*FilterList*](https://github.com/kherin/DailyCodingProblems/blob/master/filterList.js) - Create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
