@@ -1,0 +1,11 @@
+name: Carbonize Code
+# This workflow is triggered whenever on pushes to this repository
+on: [push]
+
+jobs:
+  build:
+    name: carbonow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kherin/actions/setup-node
+      - run: echo 'Hello World'
