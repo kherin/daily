@@ -7,3 +7,5 @@
 - [3] [*PalindromeNumber*](https://github.com/kherin/DailyCodingProblems/blob/master/palindromeNumber.js) - Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
 - [4] [*FilterList*](https://github.com/kherin/DailyCodingProblems/blob/master/filterList.js) - Create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+- [5] [*CountSmileys*](https://github.com/kherin/DailyCodingProblems/blob/master/CountSmileys.js) - Create a function that counts the number of smileys in an array.
