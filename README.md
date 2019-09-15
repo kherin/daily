@@ -9,3 +9,5 @@
 - [4] [*FilterList*](https://github.com/kherin/DailyCodingProblems/blob/master/filterList.js) - Create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
 
 - [5] [*CountSmileys*](https://github.com/kherin/DailyCodingProblems/blob/master/CountSmileys.js) - Create a function that counts the number of smileys in an array.
+
+- [6] [*ValidateIPv4*](https://github.com/kherin/DailyCodingProblems/blob/master/validateIPv4.js) - An absurdly lengthy and convoluted way to validate an address.
