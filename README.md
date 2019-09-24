@@ -11,3 +11,5 @@
 - [5] [*CountSmileys*](https://github.com/kherin/DailyCodingProblems/blob/master/CountSmileys.js) - Create a function that counts the number of smileys in an array.
 
 - [6] [*ValidateIPv4*](https://github.com/kherin/DailyCodingProblems/blob/master/validateIPv4.js) - An absurdly lengthy and convoluted way to validate an address.
+
+- [7] [*Scrambles*](https://github.com/kherin/DailyCodingProblems/blob/master/scramblies.js) - Assert whether a string is present inside a larger string.
