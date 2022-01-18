@@ -14,12 +14,8 @@ fun main() {
     val frequencyMapForInputOne = tokensInputOne.countEach()
     val frequencyMapForInputTwo = tokensInputTwo.countEach()
 
-    if (frequencyMapForInputOne.size === frequencyMapForInputTwo.size) {
-        if (frequencyMapForInputOne hasSameFrequency frequencyMapForInputTwo) {
-            println("is anagram")
-        } else {
-            println("not anagram")
-        }
+    if (frequencyMapForInputOne hasSameFrequency frequencyMapForInputTwo) {
+        println("is anagram")
     } else {
         println("not anagram")
     }
@@ -37,8 +33,5 @@ fun List<String>.countEach(): MutableMap<String, Int> {
 }
 
 infix fun MutableMap<String, Int>.hasSameFrequency(incomingMap: MutableMap<String, Int>): Boolean {
-    return this.all { (key, value) ->
-        println("${incomingMap[key]} === $value")
-        incomingMap[key] === value
-    }
+    return this.all { (key, value) -> incomingMap[key] == value }
 }
