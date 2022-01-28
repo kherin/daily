@@ -11,9 +11,7 @@ fun repeatedString(s: String, n: Int): Int {
     val baseStringSize: Int = characters.size
 
     val repeatFactor: Int = n - (n % baseStringSize)
+    println("repeatFactor: $repeatFactor")
 
-    val repeatingList: List<String> = List(repeatFactor) { s }
-    repeatingList.plus(s.substring(0, baseStringSize - 1))
-
-    return repeatingList.count { it == "a" }
+    return 0
 }
