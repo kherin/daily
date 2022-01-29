@@ -13,5 +13,5 @@ fun repeatedString(s: String, n: Int): Int {
     val repeatFactor: Int = n - (n % baseStringSize)
     println("repeatFactor: $repeatFactor")
 
-    return 0
+    return 1
 }
