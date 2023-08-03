@@ -1,4 +1,85 @@
 *.idea
 .idea/daily.iml
 .vscode/
+.DS_Store# Jupyter Notebook specific
+.ipynb_checkpoints/
+*.ipynb_meta
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Python related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data and output files
+data/
+output/
+*.csv
+*.xlsx
+
+# Logs and temporary files
+*.log
+*.swp
+*.swo
 .DS_Store
+
+# Project-specific
+config.ini
+secrets.ini
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# Compiled C extension
+*.so
+
+# macOS-specific
+.AppleDouble
+.DS_Store
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.idea/*
+# IntelliJ IDEA
+.idea/
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+
+# Compiled Java classes
+*.class
+
+# Logs
+*.log
+
+# Compiled source directories
+out/
+
+# Caches and local history
+.caches/
+.localhistory/
+
+# Other
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+*.DS_Store
