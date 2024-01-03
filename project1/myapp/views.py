@@ -12,3 +12,10 @@ def pathview(request, name, id):
 
 def showform(request):
     return render(request, "form.html")
+
+
+def getform(request):
+    if request.method == "POST":
+        id = request.POST["id"]
+        name = request.POST["name"]
+    return HttpResponse("Name: {}, Id: {}".format(name, id))
