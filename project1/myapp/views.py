@@ -19,3 +19,14 @@ def getform(request):
         id = request.POST["id"]
         name = request.POST["name"]
     return HttpResponse("Name: {}, Id: {}".format(name, id))
+
+
+def drinks(request, drink_name):
+    drink = {
+        'mocha': 'type of coffee',
+        'tea': 'type of beverage',
+        'lemonade': 'type of refreshment',
+    }
+
+    choice_of_drink = drink.get(drink_name)
+    return HttpResponse(f'<h2>{drink_name}</h2><span>{choice_of_drink}</span>')
