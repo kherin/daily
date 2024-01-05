@@ -18,7 +18,7 @@ def getform(request):
     if request.method == "POST":
         id = request.POST["id"]
         name = request.POST["name"]
-    return HttpResponse("Name: {}, Id: {}".format(name, id))
+    return HttpResponse(f'Name: {name}, Id: {id}')
 
 
 def drinks(request, drink_name):
