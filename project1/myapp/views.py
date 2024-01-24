@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from myapp.models import Menu
 
 
 def home(request):
@@ -33,7 +34,9 @@ def drinks(request, drink_name):
 
 
 def menu(request):
-    return render(request, "menu.html")
+    menu_items = Menu.objects.all()
+    items_dict = {'menu': menu_items}
+    return render(request, "menu.html", items_dict)
 
 
 def about(request):

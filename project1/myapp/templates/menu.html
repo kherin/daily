@@ -1,23 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Add heading code -->
-    <h1 style="color: #495E57">
-        Menu
-    </h1>
+    <h1 style="color: #495e57">Menu</h1>
 
     <!-- Add paragraph code -->
 
     <!-- Add image code -->
+    <img src="{% static 'img/dessert.png' %}" />
 
-</body>
-
+    {% if menu %} {% for item in menu %}
+    <div>Name: {{item.name}}</div>
+    <div>Price: {{item.price}}</div>
+    {%endfor%} {%else%} No Items to display {% endif %}
+  </body>
 </html>
