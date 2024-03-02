@@ -1,5 +1,5 @@
 # from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .forms import BookingForm
 from .models import Menu
 
@@ -23,10 +23,8 @@ def book(request):
     return render(request, 'book.html', context)
 
 
-def menu(request):
-    menu_data = Menu.objects.order_by('name').all()
-    main_data = {'menu': menu_data}
-    return render(request, 'menu.html', main_data)
+def menu():
+    return HttpResponse("Hello World")
 
 
 def display_menu_items(request, pk=None):
