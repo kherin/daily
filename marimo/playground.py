@@ -11,8 +11,10 @@ def _():
     from bs4 import BeautifulSoup
     import requests
     from lxml import html
-    import matplotlib.pyplot as plt 
-    return html, mo, pd, requests
+    import matplotlib.pyplot as plt
+    import altair as alt
+    import numpy as np
+    return html, mo, pd, plt, requests
 
 
 @app.cell
@@ -25,7 +27,7 @@ def _():
 def _(html, mo, raw_data, requests):
     # 1. Fetch the page
     for pageNumber in mo.status.progress_bar(range(1, 27)):
-    
+
         resp = requests.get(f"https://results.finishtime.co.za/results.aspx?CId=35&RId=5248&EId=2&dt=0&PageNo={pageNumber}")
         resp.raise_for_status()
 
@@ -41,7 +43,7 @@ def _(html, mo, raw_data, requests):
             # skip header
             if idx == 0:
                 continue
-            
+
             values = []
             for cell in row.xpath(".//td"):
                 # try to pull anchor text
@@ -51,7 +53,7 @@ def _(html, mo, raw_data, requests):
                 else:
                     # string(.) collapses all text descendants
                     values.append(cell.xpath("string(.)").strip())
-        
+
             raw_data.append([values[1], values[2], values[5], values[7], values[8], values[9], values[11], values[12], values[13], values[14], values[15], values[17]])
     return
 
@@ -71,7 +73,7 @@ def _():
 @app.cell
 def _(columns, pd, raw_data):
     df = pd.DataFrame(raw_data, columns=columns)
-    df
+    df[df['Name'].str.contains('Kherin')]
     return (df,)
 
 
@@ -105,18 +107,49 @@ def _(mo):
 
 
 @app.cell
-def _(df):
+def _():
+    interval = 5
+    return (interval,)
+
+
+@app.cell
+def _(df, interval):
     min_finish_time = int(df['Finish in minutes'].min())
     max_finish_time = int(df['Finish in minutes'].max())
 
-    bin_edges = range(min_finish_time, max_finish_time + 5, 5)
+    bin_edges = range(min_finish_time, max_finish_time + interval, interval)
     return (bin_edges,)
+
+
+@app.cell
+def _(bin_edges):
+    len(list(bin_edges))
+    return
 
 
 @app.cell
 def _(bin_edges, df, pd):
     df['time_bucket'] = pd.cut(df['Finish in minutes'], bins=bin_edges)
-    df.head(2)
+    return
+
+
+@app.cell
+def _(df):
+    counts = df['time_bucket'].value_counts().sort_index()
+    return
+
+
+@app.cell
+def _(df, plt):
+    plt.figure()
+    plt.scatter(df['Pos'], df['Finish in minutes'])
+    plt.xlabel('Finish time (minutes)')
+    plt.yticks([])  # hide the y-axis, since it's just one box
+    plt.title('Finish Time Distribution with Your Result')
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
     return
 
 
